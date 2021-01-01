@@ -6,7 +6,7 @@ const client = new Discord.Client();
 
 const configFile = fs.readFileSync("config.yml", "utf8");
 config = YAML.parse(configFile);
-const socket = io(config.web_socket.address + ":" +config.web_socket.port);
+const socket = io(config.web_socket.address + ":" + config.web_socket.port, {transports: ["websocket", "polling"]});
 
 socket.on("get players", data => updateCount(data));
 socket.on("change", data => updateCount(data));
