@@ -14,7 +14,7 @@ socket.on("online", () => {
   changeName(config.discord.channels.voice_status, "Status: Online")
   socket.emit("get players");
 });
-socket.on("offline", () => changeName(config.discord.channels.voice_status, "Status: Offline");
+socket.on("offline", () => changeName(config.discord.channels.voice_status, "Status: Offline"));
 
 client.on("ready", () => {
   console.log("Bot started!");
